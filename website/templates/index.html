@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Make your Contribution</title>
+  
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css'><link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="{{url_for('static',filename='assets/logos/favicon.png')}}"/>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css'>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark teal mb-4" style="border-radius: 0px;">
+        <!-- <a class="navbar-brand font-bold" href="#">Navbar</a> -->
+        <a class="navbar-brand text-bold" href="{{url_for('home')}}"><img src="{{url_for('static',filename='assets/logos/logo.png')}}" height="30" alt=""> pinakipb2/contrib-here</a>
+        <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light"><i class="fa fa-google-plus"></i></a>
+                </li>
+            </ul>
+        </div> -->
+    </nav>
+
+<section>
+    <div class="container">
+        <div class="row" style="margin-right: 30px; margin-left: 30px;">
+            <h1 class="text-center" style="font-family: Helvetica;"><span style="font-family: Helvetica;">Make Your own Contribution</span>
+                <span style="font-size: 30px; font-weight:500; font-family:Helvetica;">Every contribution counts! One pull request at a time.</span>
+                <div style="margin-top: 30px; margin-bottom: 70px;">
+                <a class="btn teal test-bold btn-md text-cen" href="https://github.com/pinakipb2/contrib-here" target="_blank"><b>Create a Pull Request</b><i class="fa fa-github pl-2"></i></a></div>
+            </h1>
+            
+            {% for c in contributors %}
+            <!--Profile Card-->
+            <div class="col-md-4">
+                <div class="card profile-card-3" style="border-radius: .9rem;">
+                    <div class="background-block">
+                        {% set fname = 'assets/cover/' + c.cover + '.jpg' %}
+                        <img src="{{url_for('static',filename=fname)}}" alt="profile-sample1" class="background"/>
+                    </div>
+                    <div class="profile-thumb-block">
+                        {% set fname = 'assets/avatar/' + c.avatar + '.jpg' %}
+                        <img src="{{url_for('static',filename=fname)}}" alt="profile-image" class="profile"/>
+                    </div>
+                    <div class="card-content">
+                    <h2>{{c.name}}<small>
+                        {% for l in c.lang %}
+                        {{l}}
+                        {% endfor %}
+                    </small></h3>
+                    <div class="icon-block">
+                        {% if c.github %}
+                        <a href="{{c.github}}"><i class="fa fa-github"></i></a>
+                        {% endif %}
+                        {% if c.linkedin %}
+                        <a href="{{c.linkedin}}"> <i class="fa fa-linkedin"></i></a>
+                        {% endif %}
+                        {% if c.twitter %}
+                        <a href="{{c.twitter}}"> <i class="fa fa-twitter"></i></a>
+                        {% endif %}
+                    </div>
+                    </div>
+                </div>
+                <p>&nbsp;</p>
+            </div>
+            <!--Profile Card-->
+            {% endfor %}
+            
+        </div>
+    </div>
+    <div align="center" style="margin-top: 100px; margin-bottom: 40px;">
+        <h4>Thank you for visiting here!</h4>
+    </div>
+</section>
+
+<!-- footer -->
+<footer class="page-footer teal text-center text-md-left mt-0">
+    <div class="container-fluid">
+        <div class="row">
+        </div>
+    </div>
+    <!--Copyright-->
+    <div class="footer-copyright">
+        <div class="container-fluid">
+            © {{curr_yr}} <a href="https://pinakipb2.blogspot.com/" target="_blank"> PINAKI BHATTACHARJEE </a>
+        </div>
+    </div>
+    <!--/.Copyright-->
+</footer>
+<!-- footer -->
+  
+</body>
+</html>
