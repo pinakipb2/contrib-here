@@ -4,7 +4,7 @@ import json, os,datetime,sys
 app = Flask(__name__,template_folder='templates')
 app.secret_key = '\xe0\xb8]\xff\xe8oA\x1a\x01x\x17vQ\x85\xf2\xf3?BC\xba'
 
-profiles_path = './data/contributors/'
+profiles_path = './contributors/'
 profiles = os.listdir(profiles_path)
 # print(profiles)
 
