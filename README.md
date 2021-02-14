@@ -8,7 +8,7 @@ Contributions are always **welcome and recommended**! Here is how:
 - Fork the repository ( [Here is the Guide](https://help.github.com/articles/fork-a-repo/) ).
 - Clone to your machine
 - Create a new branch
-- Add your json file in the Contributors folder
+- Add your json file in the contributors folder
 - Create a pull request
 
 ## Adding a json file
